@@ -1,0 +1,21 @@
+﻿<Window x:Class="VMoiChat.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VMoiChat"
+        mc:Ignorable="d"
+        Title="VMoiChat" Height="450" Width="800">
+    <Grid>
+        <TextBlock x:Name="ServerStatusTextBlock" HorizontalAlignment="Left" Margin="10, 10, 0, 0" TextWrapping="Wrap" Text="Server status: Stopped" VerticalAlignment="Top"/>
+        <Button x:Name="StartButton" Content="Start Server" HorizontalAlignment="Left" Margin="10, 35, 0, 0" VerticalAlignment="Top" Width="100" Click="StartButton_Click"/>
+        <ListBox x:Name="MessageListBox" HorizontalAlignment="Left" Height="200" Margin="10, 70, 0, 0" VerticalAlignment="Top" Width="480"/>
+        <TextBox x:Name="InputNameBox" HorizontalAlignment="Left" Margin="417,30,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Margin="130, 280, 0, 0" VerticalAlignment="Top" Width="350" Height="30"/>
+        <Button x:Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="500, 280, 0, 0" VerticalAlignment="Top" Width="70" Click="SendButton_Click" Height="30"/>
+        <Button x:Name="StopButton" Content="Stop Server" HorizontalAlignment="Left" Margin="130,35,0,0" VerticalAlignment="Top" Width="100" Click="StopButton_Click"/>
+        <Button x:Name="ConnectedButton" Content="Connected" HorizontalAlignment="Left" Margin="535,35,0,0" VerticalAlignment="Top" Width="100" Click="ConnectedButton_Click"/>
+        <Button x:Name="DisconnectedButton" Content="Disconnected" HorizontalAlignment="Left" Margin="652,35,0,0" VerticalAlignment="Top" Width="100" Click="DisconnectedButton_Click"/>
+        <TextBox x:Name="InputNameRecipientBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+    </Grid>
+</Window>
