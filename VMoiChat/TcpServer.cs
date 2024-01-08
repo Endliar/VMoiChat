@@ -123,24 +123,45 @@ namespace VMoiChat
 
         public async Task SendMessageToClient(string username, string message)
         {
-            ConnectedClient connectedClient = connectedClients.FirstOrDefault(client => client.Username == username);
-
-            if (connectedClient != null)
+            if (username == "All")
             {
-                NetworkStream networkStream = connectedClient.TcpClient.GetStream();
-                StreamWriter streamWriter = new StreamWriter(networkStream, Encoding.UTF8);
-
-                try
+                foreach (var client in connectedClients)
                 {
-                    await streamWriter.WriteLineAsync(message).ConfigureAwait(false);
-                    await streamWriter.FlushAsync().ConfigureAwait(false);
-                    Application.Current.Dispatcher.Invoke(() => { ((MainWindow)Application.Current.MainWindow).AddMessageToListBox($"Ответ от {connectedClient.Username}: {message}"); });
+                    NetworkStream networkStream = client.TcpClient.GetStream();
+                    StreamWriter streamWriter = new StreamWriter(networkStream, Encoding.UTF8);
 
-                } catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
+                    try
+                    {
+                        await streamWriter.WriteLineAsync(message).ConfigureAwait(false);
+                        await streamWriter.FlushAsync().ConfigureAwait(false);
+                        Application.Current.Dispatcher.Invoke(() => { ((MainWindow)Application.Current.MainWindow).AddMessageToListBox($"Ответ от {client.Username}: {message}"); });
+                    } catch (Exception ex)
+                    {
+                        MessageBox.Show($"{ex.Message}");
+                    }
                 }
+            } else
+            {
+                ConnectedClient connectedClient = connectedClients.FirstOrDefault(client => client.Username == username);
 
+                if (connectedClient != null)
+                {
+                    NetworkStream networkStream = connectedClient.TcpClient.GetStream();
+                    StreamWriter streamWriter = new StreamWriter(networkStream, Encoding.UTF8);
+
+                    try
+                    {
+                        await streamWriter.WriteLineAsync(message).ConfigureAwait(false);
+                        await streamWriter.FlushAsync().ConfigureAwait(false);
+                        Application.Current.Dispatcher.Invoke(() => { ((MainWindow)Application.Current.MainWindow).AddMessageToListBox($"Ответ от {connectedClient.Username}: {message}"); });
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+
+                }
             }
         }
 

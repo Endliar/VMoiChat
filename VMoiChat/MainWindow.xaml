@@ -9,13 +9,16 @@
     <Grid>
         <TextBlock x:Name="ServerStatusTextBlock" HorizontalAlignment="Left" Margin="10, 10, 0, 0" TextWrapping="Wrap" Text="Server status: Stopped" VerticalAlignment="Top"/>
         <Button x:Name="StartButton" Content="Start Server" HorizontalAlignment="Left" Margin="10, 35, 0, 0" VerticalAlignment="Top" Width="100" Click="StartButton_Click"/>
-        <ListBox x:Name="MessageListBox" HorizontalAlignment="Left" Height="200" Margin="10, 70, 0, 0" VerticalAlignment="Top" Width="480"/>
-        <TextBox x:Name="InputNameBox" HorizontalAlignment="Left" Margin="417,30,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
-        <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Margin="130, 280, 0, 0" VerticalAlignment="Top" Width="350" Height="30"/>
-        <Button x:Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="500, 280, 0, 0" VerticalAlignment="Top" Width="70" Click="SendButton_Click" Height="30"/>
+        <ListBox x:Name="MessageListBox" HorizontalAlignment="Left" Height="200" Margin="10,100,0,0" VerticalAlignment="Top" Width="480"/>
+        <TextBox x:Name="InputNameBox" HorizontalAlignment="Left" Margin="364,35,0,0" VerticalAlignment="Top" Width="153" Height="30"/>
+        <TextBox x:Name="InputTextBox" HorizontalAlignment="Left" Margin="199,356,0,0" VerticalAlignment="Top" Width="350" Height="30"/>
+        <Button x:Name="SendButton" Content="Send" HorizontalAlignment="Left" Margin="585,356,0,0" VerticalAlignment="Top" Width="70" Click="SendButton_Click" Height="30"/>
         <Button x:Name="StopButton" Content="Stop Server" HorizontalAlignment="Left" Margin="130,35,0,0" VerticalAlignment="Top" Width="100" Click="StopButton_Click"/>
-        <Button x:Name="ConnectedButton" Content="Connected" HorizontalAlignment="Left" Margin="535,35,0,0" VerticalAlignment="Top" Width="100" Click="ConnectedButton_Click"/>
-        <Button x:Name="DisconnectedButton" Content="Disconnected" HorizontalAlignment="Left" Margin="652,35,0,0" VerticalAlignment="Top" Width="100" Click="DisconnectedButton_Click"/>
-        <TextBox x:Name="InputNameRecipientBox" HorizontalAlignment="Left" Margin="10,280,0,0" VerticalAlignment="Top" Width="100" Height="30"/>
+        <Button x:Name="ConnectedButton" Content="Connected" HorizontalAlignment="Left" Margin="535,35,0,0" VerticalAlignment="Top" Width="100" Click="ConnectedButton_Click" Height="30"/>
+        <Button x:Name="DisconnectedButton" Content="Disconnected" HorizontalAlignment="Left" Margin="652,35,0,0" VerticalAlignment="Top" Width="100" Click="DisconnectedButton_Click" Height="30"/>
+        <TextBox x:Name="InputNameRecipientBox" HorizontalAlignment="Left" Margin="10,356,0,0" VerticalAlignment="Top" Width="155" Height="30"/>
+        <TextBlock x:Name="UsernameTextBloc" HorizontalAlignment="Left" Margin="364,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="153"><Run Text="Введите"/><Run Language="ru-ru" Text=" свой"/><Run Text=" username"/></TextBlock>
+        <TextBlock x:Name="UsernameAddressTextBloc" HorizontalAlignment="Left" Margin="10,335,0,0" TextWrapping="Wrap" Text="Введите username адресата" VerticalAlignment="Top" Width="170"/>
+        <TextBlock x:Name="UsernameAddressMessageTextBloc" HorizontalAlignment="Left" Margin="204,335,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="170"><Run Text="Введите"/><Run Language="ru-ru" Text=" сообщение адресату"/></TextBlock>
     </Grid>
 </Window>
